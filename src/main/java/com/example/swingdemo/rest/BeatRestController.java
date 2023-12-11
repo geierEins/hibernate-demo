@@ -41,6 +41,11 @@ public class BeatRestController {
 	public ResponseEntity<String> persistBeat(@RequestBody Beat beat) {
 		return beatService.persist(beat);
 	}
+	
+    @PostMapping("/update")
+    public ResponseEntity<String> updateBeat(@RequestBody Beat updatedBeat) {
+    	return beatService.update(updatedBeat);
+    }
 
 	@GetMapping("/delete")
 	public ResponseEntity<String> delete(@RequestParam(name = "id") Long id) {
